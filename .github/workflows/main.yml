@@ -1,6 +1,9 @@
 name: User Input with Prompt
 on:
- issue_comment:
+  push:
+    branches: 
+       - main
+  issue_comment:
     types:
       - created
 jobs:

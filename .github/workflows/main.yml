@@ -1,0 +1,20 @@
+name: User Input with Prompt
+
+on:
+  push:
+    branches: 
+       - main
+jobs:
+  user-input:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: User Input Prompt
+        uses: softprops/action-gh-release@v1
+        with:
+          command: "Enter your input"
+        env:
+          INPUT_MESSAGE: ${{ github.event.comment.body }}
+      - name: Show User Input
+        run: |
+          echo "User input: $INPUT_MESSAGE"

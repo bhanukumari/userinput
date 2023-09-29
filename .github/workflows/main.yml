@@ -1,9 +1,8 @@
 name: User Input with Prompt
-
 on:
-  push:
-    branches: 
-       - main
+ issue_comment:
+    types:
+      - created
 jobs:
   user-input:
     runs-on: ubuntu-latest

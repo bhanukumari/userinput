@@ -7,7 +7,7 @@ on:
    workflow_dispatch:
     inputs:
       user_input:
-        description: 'User Input'
+        description: 'bhanu'
         required: true
 
 jobs:

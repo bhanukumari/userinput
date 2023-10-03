@@ -1,7 +1,10 @@
 name: User Input Example
 
 on:
-  workflow_dispatch:
+   push:
+    branches: 
+       - main
+   workflow_dispatch:
     inputs:
       user_input:
         description: 'User Input'

@@ -1,22 +1,16 @@
-name: User Input with Prompt
-on:
-  push:
-    branches: 
-       - main
-  issue_comment:
-    types:
-      - created
-jobs:
-  user-input:
-    runs-on: ubuntu-latest
+name: User Input Example
 
+on:
+  workflow_dispatch:
+    inputs:
+      user_input:
+        description: 'User Input'
+        required: true
+
+jobs:
+  user_input:
+    runs-on: ubuntu-latest
     steps:
-      - name: User Input Prompt
-        uses: softprops/action-gh-release@v1
-        with:
-          command: "Enter your input"
-        env:
-          INPUT_MESSAGE: ${{ github.event.comment.body }}
-      - name: Show User Input
+      - name: Display User Input
         run: |
-          echo "User input: $INPUT_MESSAGE"
+          echo "User Input: ${{ github.event.inputs.user_input }}"
